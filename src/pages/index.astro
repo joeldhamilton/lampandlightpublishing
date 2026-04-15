@@ -12,7 +12,7 @@ const base = import.meta.env.BASE_URL;
     <title>Lamp & Light Publishing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700&family=Source+Serif+4:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <script is:inline>
       const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', theme);
@@ -23,10 +23,7 @@ const base = import.meta.env.BASE_URL;
     <!-- Nav -->
     <nav class="nav">
       <div class="nav-inner">
-        <a href={base} class="nav-brand">
-          <img src={`${base}images/lamplight-icon.png`} alt="" class="nav-icon" />
-          Lamp & Light
-        </a>
+        <a href={base} class="nav-brand">Lamp & Light</a>
         <div class="nav-right">
           <a href="#books">Books</a>
           <a href="#classics">Classics</a>
@@ -41,13 +38,40 @@ const base = import.meta.env.BASE_URL;
 
     <!-- Hero -->
     <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-glow-2"></div>
       <div class="hero-inner">
-        <div class="hero-lamp">&#128294;</div>
+        <div class="lamp-icon">
+          <svg viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="lamp-svg">
+            <path d="M28 8C28 5 32 2 32 2S36 5 36 8C36 12 34 14 34 14H30C30 14 28 12 28 8Z" fill="url(#flame)" class="flame"/>
+            <rect x="29" y="14" width="6" height="4" rx="1" fill="#c87020"/>
+            <path d="M24 18H40L42 28H22L24 18Z" fill="#8b5e3c" stroke="#a0703c" stroke-width="0.5"/>
+            <rect x="22" y="28" width="20" height="3" rx="1" fill="#a0703c"/>
+            <path d="M26 31H38V50C38 52 36 54 34 54H30C28 54 26 52 26 50V31Z" fill="#7a4a28" stroke="#8b5e3c" stroke-width="0.5"/>
+            <rect x="24" y="54" width="16" height="3" rx="1" fill="#a0703c"/>
+            <rect x="22" y="57" width="20" height="2" rx="1" fill="#8b5e3c"/>
+            <path d="M18 59H46V62C46 63 45 64 44 64H20C19 64 18 63 18 62V59Z" fill="#6b3a1a"/>
+            <defs>
+              <radialGradient id="flame" cx="0.5" cy="0.3" r="0.7">
+                <stop offset="0%" stop-color="#fff4d4"/>
+                <stop offset="30%" stop-color="#ffb833"/>
+                <stop offset="70%" stop-color="#e87a10"/>
+                <stop offset="100%" stop-color="#c44a00"/>
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
         <p class="hero-label">A Publishing House by Joel Hamilton</p>
-        <h1>Lamp & Light<br/>Publishing</h1>
+        <h1>Lamp &<br/>Light</h1>
         <div class="hero-line"></div>
-        <p class="hero-tagline">"Your word is a lamp to my feet and a light to my path."<br/><span class="hero-cite">— Psalm 119:105</span></p>
+        <p class="hero-verse">"Your word is a lamp to my feet<br/>and a light to my path."</p>
+        <p class="hero-cite">Psalm 119:105</p>
+        <div class="hero-ctas">
+          <a href="#books" class="btn btn-primary">Browse Books</a>
+          <a href="#classics" class="btn btn-outline">Classics Collection</a>
+        </div>
       </div>
+      <div class="hero-fade"></div>
     </section>
 
     <!-- Original Books -->
@@ -59,38 +83,44 @@ const base = import.meta.env.BASE_URL;
 
         <div class="books-grid">
           <a href="https://amzn.to/42egs57" target="_blank" rel="noopener" class="book-card">
-            <div class="book-cover">
+            <div class="book-cover-wrap">
+              <div class="book-glow"></div>
               <img src={`${base}images/cover-daily-crusader.jpg`} alt="The Daily Crusader" />
             </div>
             <div class="book-info">
+              <p class="book-label">Daily Devotional</p>
               <h3>The Daily Crusader</h3>
               <p class="book-subtitle">365 Days of Faith, Discipline, and War</p>
-              <p>A daily devotional for men who take their faith seriously. 365 entries rooted in Scripture — short, direct, built to sharpen.</p>
-              <span class="book-link">Available on Amazon &rarr;</span>
+              <p class="book-desc">A daily devotional for men who take their faith seriously. 365 entries rooted in Scripture — short, direct, built to sharpen.</p>
+              <span class="book-link">Get on Amazon &rarr;</span>
             </div>
           </a>
 
           <a href="https://amzn.to/4mwc8rf" target="_blank" rel="noopener" class="book-card">
-            <div class="book-cover">
+            <div class="book-cover-wrap">
+              <div class="book-glow"></div>
               <img src={`${base}images/cover-not-by-effort.jpg`} alt="Not by Effort" />
             </div>
             <div class="book-info">
+              <p class="book-label">Biblical Study</p>
               <h3>Not by Effort</h3>
               <p class="book-subtitle">How God Grows the Fruit of the Spirit in You</p>
-              <p>The fruit of the Spirit is not a checklist. It grows by the work of God, not the effort of man.</p>
-              <span class="book-link">Available on Amazon &rarr;</span>
+              <p class="book-desc">The fruit of the Spirit is not a checklist. It grows by the work of God, not the effort of man.</p>
+              <span class="book-link">Get on Amazon &rarr;</span>
             </div>
           </a>
 
           <a href="https://amzn.to/4cJAPND" target="_blank" rel="noopener" class="book-card">
-            <div class="book-cover">
+            <div class="book-cover-wrap">
+              <div class="book-glow"></div>
               <img src={`${base}images/cover-the-line.jpg`} alt="The Line" />
             </div>
             <div class="book-info">
+              <p class="book-label">Commitment</p>
               <h3>The Line</h3>
               <p class="book-subtitle">How Total Commitment Transforms Everything</p>
-              <p>You've been half-in long enough. This book is about what happens when you stop negotiating with yourself and finally commit.</p>
-              <span class="book-link">Available on Amazon &rarr;</span>
+              <p class="book-desc">You've been half-in long enough. What happens when you stop negotiating with yourself and finally commit.</p>
+              <span class="book-link">Get on Amazon &rarr;</span>
             </div>
           </a>
         </div>
@@ -104,51 +134,78 @@ const base = import.meta.env.BASE_URL;
         <h2 class="section-title">Classic Literature, Reimagined</h2>
         <div class="section-line"></div>
         <p class="classics-intro">
-          The great books deserve to be read — not just remembered. Lamp & Light Classics brings timeless literature to every reading level:
-          early readers, modern English adaptations, annotated scholar's editions, and homeschool workbooks.
+          The great books deserve to be read — not just remembered. We bring timeless literature to every reading level:
+          early readers, modern adaptations, annotated scholar's editions, and homeschool workbooks.
         </p>
 
-        <h3 class="series-title">Treasure Island <span class="series-author">Robert Louis Stevenson</span></h3>
+        <div class="series-header">
+          <h3 class="series-title">Treasure Island</h3>
+          <p class="series-author">Robert Louis Stevenson</p>
+        </div>
 
+        <p class="edition-label">Reading Editions</p>
         <div class="classics-grid">
           <a href="https://amzn.to/484fX14" target="_blank" rel="noopener" class="classic-card">
-            <img src={`${base}images/cover-ti-early-reader.png`} alt="Treasure Island Early Reader" />
-            <h4>Early Reader</h4>
-            <p>Ages 6-8</p>
+            <div class="classic-cover-wrap">
+              <img src={`${base}images/cover-ti-early-reader.png`} alt="Treasure Island Early Reader" />
+            </div>
+            <div class="classic-info">
+              <h4>Early Reader</h4>
+              <p>Ages 6-8</p>
+            </div>
           </a>
 
           <a href="https://amzn.to/4tirXEI" target="_blank" rel="noopener" class="classic-card">
-            <img src={`${base}images/cover-ti-modern-classic.png`} alt="Treasure Island Modern Classic" />
-            <h4>Modern Classic</h4>
-            <p>Adapted for modern English</p>
+            <div class="classic-cover-wrap">
+              <img src={`${base}images/cover-ti-modern-classic.png`} alt="Treasure Island Modern Classic" />
+            </div>
+            <div class="classic-info">
+              <h4>Modern Classic</h4>
+              <p>Modern English</p>
+            </div>
           </a>
 
           <a href="https://amzn.to/4cszCcw" target="_blank" rel="noopener" class="classic-card">
-            <img src={`${base}images/cover-ti-scholars.jpg`} alt="Treasure Island Scholar's Edition" />
-            <h4>Scholar's Edition</h4>
-            <p>Annotated original text</p>
+            <div class="classic-cover-wrap">
+              <img src={`${base}images/cover-ti-scholars.jpg`} alt="Treasure Island Scholar's Edition" />
+            </div>
+            <div class="classic-info">
+              <h4>Scholar's Edition</h4>
+              <p>Annotated Original</p>
+            </div>
           </a>
         </div>
 
-        <h4 class="workbooks-heading">Workbooks</h4>
-
-        <div class="workbooks-grid">
-          <a href="https://amzn.to/4tJ0pIj" target="_blank" rel="noopener" class="workbook-card">
-            <img src={`${base}images/cover-ti-wb-elementary.jpg`} alt="Elementary Workbook" />
-            <h4>Elementary</h4>
-            <p>Grades 1-4</p>
+        <p class="edition-label">Workbooks</p>
+        <div class="classics-grid">
+          <a href="https://amzn.to/4tJ0pIj" target="_blank" rel="noopener" class="classic-card">
+            <div class="classic-cover-wrap">
+              <img src={`${base}images/cover-ti-wb-elementary.jpg`} alt="Elementary Workbook" />
+            </div>
+            <div class="classic-info">
+              <h4>Elementary</h4>
+              <p>Grades 1-4</p>
+            </div>
           </a>
 
-          <a href="https://amzn.to/4myxggK" target="_blank" rel="noopener" class="workbook-card">
-            <img src={`${base}images/cover-ti-wb-middle.jpg`} alt="Middle Grade Workbook" />
-            <h4>Middle Grade</h4>
-            <p>Grades 5-8</p>
+          <a href="https://amzn.to/4myxggK" target="_blank" rel="noopener" class="classic-card">
+            <div class="classic-cover-wrap">
+              <img src={`${base}images/cover-ti-wb-middle.jpg`} alt="Middle Grade Workbook" />
+            </div>
+            <div class="classic-info">
+              <h4>Middle Grade</h4>
+              <p>Grades 5-8</p>
+            </div>
           </a>
 
-          <a href="https://amzn.to/3QcM9sX" target="_blank" rel="noopener" class="workbook-card">
-            <img src={`${base}images/cover-ti-wb-high.jpg`} alt="High School Workbook" />
-            <h4>High School</h4>
-            <p>Grades 9-12</p>
+          <a href="https://amzn.to/3QcM9sX" target="_blank" rel="noopener" class="classic-card">
+            <div class="classic-cover-wrap">
+              <img src={`${base}images/cover-ti-wb-high.jpg`} alt="High School Workbook" />
+            </div>
+            <div class="classic-info">
+              <h4>High School</h4>
+              <p>Grades 9-12</p>
+            </div>
           </a>
         </div>
       </div>
@@ -158,8 +215,9 @@ const base = import.meta.env.BASE_URL;
     <section class="section" id="about">
       <div class="container">
         <div class="about-content">
+          <p class="section-label">About the House</p>
+          <h2 class="section-title">About</h2>
           <div class="section-line"></div>
-          <h2>About</h2>
           <p>
             Lamp & Light Publishing is the imprint of <a href="https://www.joelhamilton.com" target="_blank" rel="noopener">Joel Hamilton</a> —
             author, homeschooling father, and founder of <a href="https://www.thenarrowmarch.com" target="_blank" rel="noopener">The Narrow March</a>.
@@ -222,37 +280,43 @@ const base = import.meta.env.BASE_URL;
 
   :root {
     --font-heading: 'Cormorant Garamond', serif;
-    --font-body: 'Source Serif 4', serif;
+    --font-body: 'Inter', sans-serif;
   }
 
   [data-theme="light"] {
-    --bg: #f5f0e8;
-    --bg-alt: #ebe5d9;
-    --text: #2c2417;
-    --text-muted: #6b5d4d;
-    --accent: #b8860b;
-    --accent-hover: #d4a017;
-    --accent-glow: rgba(184, 134, 11, 0.12);
-    --border: #d4c9b8;
-    --card-bg: #faf6ef;
-    --card-shadow: 0 4px 20px rgba(44, 36, 23, 0.06);
-    --nav-bg: rgba(245, 240, 232, 0.95);
-    --lamp-glow: rgba(255, 180, 50, 0.15);
+    --bg: #f0ecf5;
+    --bg-alt: #e5e0ee;
+    --bg-deep: #1a1040;
+    --text: #1a1040;
+    --text-muted: #5a5070;
+    --accent: #e8921a;
+    --accent-hover: #f0a030;
+    --accent-glow: rgba(232, 146, 26, 0.2);
+    --border: #c8c0d8;
+    --card-bg: #faf8ff;
+    --card-shadow: 0 4px 24px rgba(26, 16, 64, 0.08);
+    --nav-bg: rgba(240, 236, 245, 0.95);
+    --glow-color: rgba(255, 180, 50, 0.25);
+    --purple: #3a2080;
+    --purple-muted: rgba(58, 32, 128, 0.08);
   }
 
   [data-theme="dark"] {
-    --bg: #1a1510;
-    --bg-alt: #14100c;
-    --text: #e8e0d4;
-    --text-muted: #9a8d7c;
-    --accent: #d4a017;
-    --accent-hover: #e8b830;
-    --accent-glow: rgba(212, 160, 23, 0.12);
-    --border: #2e271e;
-    --card-bg: #1e1914;
-    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    --nav-bg: rgba(26, 21, 16, 0.95);
-    --lamp-glow: rgba(255, 180, 50, 0.08);
+    --bg: #0e0a1a;
+    --bg-alt: #140f24;
+    --bg-deep: #0a0714;
+    --text: #e0dae8;
+    --text-muted: #8a80a0;
+    --accent: #e8921a;
+    --accent-hover: #f0a838;
+    --accent-glow: rgba(232, 146, 26, 0.25);
+    --border: #2a2240;
+    --card-bg: #16112a;
+    --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    --nav-bg: rgba(14, 10, 26, 0.95);
+    --glow-color: rgba(255, 160, 40, 0.15);
+    --purple: #6a50c0;
+    --purple-muted: rgba(106, 80, 192, 0.1);
   }
 
   html { scroll-behavior: smooth; }
@@ -261,7 +325,7 @@ const base = import.meta.env.BASE_URL;
     font-family: var(--font-body);
     background: var(--bg);
     color: var(--text);
-    line-height: 1.8;
+    line-height: 1.7;
     transition: background 0.3s, color 0.3s;
   }
 
@@ -269,13 +333,12 @@ const base = import.meta.env.BASE_URL;
   a:hover { color: var(--accent-hover); }
 
   h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.2; }
-
   img { max-width: 100%; height: auto; }
 
   /* ===== Nav ===== */
   .nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: var(--nav-bg); backdrop-filter: blur(12px);
+    background: var(--nav-bg); backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
   .nav-inner {
@@ -283,17 +346,14 @@ const base = import.meta.env.BASE_URL;
     display: flex; align-items: center; justify-content: space-between;
   }
   .nav-brand {
-    font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700;
-    color: var(--text); display: flex; align-items: center; gap: 0.6rem;
-  }
-  .nav-icon {
-    width: 30px; height: 30px; border-radius: 50%; object-fit: cover;
+    font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700;
+    color: var(--text);
   }
   .nav-brand:hover { color: var(--accent); }
   .nav-right { display: flex; align-items: center; gap: 1.75rem; }
   .nav-right a {
-    color: var(--text-muted); font-size: 0.85rem; font-weight: 500;
-    letter-spacing: 0.04em;
+    color: var(--text-muted); font-size: 0.8rem; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.06em;
   }
   .nav-right a:hover { color: var(--accent); }
 
@@ -309,29 +369,136 @@ const base = import.meta.env.BASE_URL;
 
   /* ===== Hero ===== */
   .hero {
-    padding: 12rem 2rem 6rem;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--bg-deep);
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(232, 146, 26, 0.3) 0%, rgba(232, 146, 26, 0.08) 40%, transparent 70%);
+    pointer-events: none;
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .hero-glow-2 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(106, 80, 192, 0.2) 0%, transparent 60%);
+    pointer-events: none;
+    animation: pulse 6s ease-in-out infinite reverse;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
     text-align: center;
-    background: radial-gradient(ellipse at center top, var(--lamp-glow), transparent 60%);
+    padding: 2rem;
   }
-  .hero-inner { max-width: 700px; margin: 0 auto; }
-  .hero-lamp {
-    font-size: 3rem; margin-bottom: 1.5rem;
-    filter: drop-shadow(0 0 20px rgba(255, 180, 50, 0.4));
+
+  .lamp-icon {
+    margin-bottom: 2rem;
   }
+
+  .lamp-svg {
+    width: 60px;
+    height: 75px;
+    filter: drop-shadow(0 0 20px rgba(232, 146, 26, 0.6)) drop-shadow(0 0 40px rgba(232, 146, 26, 0.3));
+  }
+
+  .flame {
+    animation: flicker 2s ease-in-out infinite;
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 1; transform: scaleY(1); }
+    25% { opacity: 0.9; transform: scaleY(0.97); }
+    50% { opacity: 1; transform: scaleY(1.02); }
+    75% { opacity: 0.95; transform: scaleY(0.99); }
+  }
+
   .hero-label {
-    font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--text-muted); margin-bottom: 1rem; font-family: var(--font-body);
+    font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(224, 218, 232, 0.6); margin-bottom: 1.5rem;
   }
+
   .hero h1 {
-    font-size: 3.5rem; font-weight: 700; letter-spacing: 0.02em;
-    margin-bottom: 1.5rem; color: var(--text);
+    font-size: 5rem; font-weight: 700; color: #fff;
+    letter-spacing: 0.02em; margin-bottom: 1.5rem;
+    text-shadow: 0 0 60px rgba(232, 146, 26, 0.2);
   }
-  .hero-line { width: 60px; height: 2px; background: var(--accent); margin: 0 auto 2rem; }
-  .hero-tagline {
-    font-style: italic; font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;
+
+  .hero-line {
+    width: 80px; height: 2px; margin: 0 auto 2rem;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
   }
+
+  .hero-verse {
+    font-family: var(--font-heading);
+    font-style: italic; font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.7); line-height: 1.8;
+    margin-bottom: 0.5rem;
+  }
+
   .hero-cite {
-    font-size: 0.9rem; color: var(--accent); font-style: normal;
+    font-size: 0.85rem; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 3rem; display: block;
+  }
+
+  .hero-ctas {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  }
+
+  .hero-fade {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* ===== Buttons ===== */
+  .btn {
+    display: inline-block; padding: 0.9rem 2.2rem;
+    font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700;
+    letter-spacing: 0.04em; border: none; cursor: pointer;
+    transition: all 0.25s;
+  }
+  .btn-primary {
+    background: var(--accent); color: #fff;
+    box-shadow: 0 4px 20px var(--accent-glow);
+  }
+  .btn-primary:hover {
+    background: var(--accent-hover); color: #fff;
+    transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow);
+  }
+  .btn-outline {
+    background: transparent; color: rgba(255,255,255,0.8);
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.1); color: #fff;
+    border-color: rgba(255,255,255,0.5); transform: translateY(-2px);
   }
 
   /* ===== Sections ===== */
@@ -339,86 +506,145 @@ const base = import.meta.env.BASE_URL;
   .section { padding: 6rem 0; }
   .section-alt { background: var(--bg-alt); }
   .section-label {
-    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
     color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;
   }
-  .section-title { font-size: 2.2rem; margin-bottom: 0.5rem; }
-  .section-line { width: 60px; height: 2px; background: var(--accent); margin-bottom: 2.5rem; }
+  .section-title { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .section-line {
+    width: 60px; height: 2px; margin-bottom: 2.5rem;
+    background: linear-gradient(90deg, var(--accent), var(--purple));
+  }
 
-  /* ===== Original Books ===== */
-  .books-grid { display: flex; flex-direction: column; gap: 2.5rem; }
+  /* ===== Book Cards ===== */
+  .books-grid { display: flex; flex-direction: column; gap: 3rem; }
 
   .book-card {
-    display: grid; grid-template-columns: 180px 1fr; gap: 2.5rem; align-items: start;
-    background: var(--card-bg); border: 1px solid var(--border); padding: 2rem;
-    box-shadow: var(--card-shadow); transition: transform 0.25s, box-shadow 0.25s;
+    display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: center;
+    background: var(--card-bg); border: 1px solid var(--border); padding: 2.5rem;
+    box-shadow: var(--card-shadow); color: var(--text);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative; overflow: hidden;
+  }
+
+  .book-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--purple));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .book-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
     color: var(--text);
   }
-  .book-card:hover { transform: translateY(-2px); color: var(--text); }
 
-  .book-cover img {
-    width: 100%; box-shadow: 0 6px 24px rgba(0,0,0,0.2); border: 1px solid var(--border);
+  .book-card:hover::before { opacity: 1; }
+
+  .book-cover-wrap {
+    position: relative;
   }
-  .book-info h3 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+
+  .book-glow {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  .book-card:hover .book-glow { opacity: 1; }
+
+  .book-cover-wrap img {
+    position: relative;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+  }
+
+  .book-card:hover .book-cover-wrap img {
+    transform: scale(1.02);
+  }
+
+  .book-label {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;
+  }
+  .book-info h3 { font-size: 1.6rem; margin-bottom: 0.25rem; }
   .book-subtitle {
-    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--accent); font-weight: 600; margin-bottom: 1rem;
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--purple); font-weight: 600; margin-bottom: 1rem;
   }
-  .book-info p { color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
-  .book-link { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+  [data-theme="dark"] .book-subtitle { color: var(--accent); opacity: 0.7; }
+  .book-desc { color: var(--text-muted); line-height: 1.8; margin-bottom: 1.25rem; font-size: 0.95rem; }
+  .book-link {
+    color: var(--accent); font-weight: 600; font-size: 0.9rem;
+    transition: letter-spacing 0.2s;
+  }
+  .book-card:hover .book-link { letter-spacing: 0.04em; }
 
   /* ===== Classics ===== */
   .classics-intro {
     color: var(--text-muted); font-size: 1.05rem; line-height: 1.9;
     max-width: 700px; margin-bottom: 3rem;
   }
-  .series-title {
-    font-size: 1.8rem; margin-bottom: 2rem;
+
+  .series-header {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: var(--purple-muted);
+    border-left: 4px solid var(--purple);
   }
-  .series-author {
-    font-weight: 400; font-size: 1rem; color: var(--text-muted);
-    font-style: italic; margin-left: 0.5rem;
+  .series-title { font-size: 2rem; margin-bottom: 0.25rem; }
+  .series-author { color: var(--text-muted); font-style: italic; font-size: 1rem; }
+
+  .edition-label {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--accent); font-weight: 600; margin-bottom: 1.5rem;
   }
 
   .classics-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    margin-bottom: 3rem;
   }
-  .classic-card {
-    background: var(--card-bg); border: 1px solid var(--border); padding: 1.5rem;
-    text-align: center; box-shadow: var(--card-shadow);
-    transition: transform 0.25s; color: var(--text); display: block;
-  }
-  .classic-card:hover { transform: translateY(-2px); color: var(--text); }
-  .classic-card img {
-    width: 100%; max-width: 200px; margin: 0 auto 1rem;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  }
-  .classic-card h4 { font-size: 1.1rem; margin-bottom: 0.25rem; }
-  .classic-card p { color: var(--text-muted); font-size: 0.85rem; }
 
-  .workbooks-heading {
-    font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--text-muted);
+  .classic-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    padding: 1.5rem; text-align: center;
+    box-shadow: var(--card-shadow); color: var(--text); display: block;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
   }
-  .workbooks-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  .classic-card:hover {
+    transform: translateY(-4px); color: var(--text);
+    border-color: var(--accent);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15), 0 0 20px var(--accent-glow);
   }
-  .workbook-card {
-    background: var(--card-bg); border: 1px solid var(--border); padding: 1.5rem;
-    text-align: center; box-shadow: var(--card-shadow);
-    transition: transform 0.25s; color: var(--text); display: block;
+
+  .classic-cover-wrap {
+    margin-bottom: 1rem;
   }
-  .workbook-card:hover { transform: translateY(-2px); color: var(--text); }
-  .workbook-card img {
-    width: 100%; max-width: 180px; margin: 0 auto 1rem;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+
+  .classic-cover-wrap img {
+    max-width: 180px; margin: 0 auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
   }
-  .workbook-card h4 { font-size: 1rem; margin-bottom: 0.25rem; }
-  .workbook-card p { color: var(--text-muted); font-size: 0.85rem; }
+  .classic-card:hover .classic-cover-wrap img { transform: scale(1.03); }
+
+  .classic-info h4 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+  .classic-info p { color: var(--text-muted); font-size: 0.85rem; }
 
   /* ===== About ===== */
   .about-content { max-width: 700px; }
   .about-content h2 { font-size: 2rem; margin-bottom: 1.5rem; }
-  .about-content p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.9; margin-bottom: 1.25rem; }
+  .about-content p {
+    color: var(--text-muted); font-size: 1.05rem; line-height: 1.9;
+    margin-bottom: 1.25rem;
+  }
 
   /* ===== Footer ===== */
   .footer {
@@ -435,7 +661,7 @@ const base = import.meta.env.BASE_URL;
   }
   .footer-tagline { font-style: italic; color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
   .footer-nav h4 {
-    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em;
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
     color: var(--text-muted); margin-bottom: 1rem; font-family: var(--font-body); font-weight: 600;
   }
   .footer-nav a { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.6rem; }
@@ -445,14 +671,15 @@ const base = import.meta.env.BASE_URL;
 
   /* ===== Responsive ===== */
   @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .book-card { grid-template-columns: 130px 1fr; gap: 1.5rem; }
-    .classics-grid, .workbooks-grid { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 3rem; }
+    .book-card { grid-template-columns: 140px 1fr; gap: 1.5rem; padding: 1.5rem; }
+    .classics-grid { grid-template-columns: 1fr 1fr; }
     .footer-top { grid-template-columns: 1fr; gap: 2rem; }
     .nav-right a { display: none; }
   }
 
   @media (max-width: 480px) {
-    .classics-grid, .workbooks-grid { grid-template-columns: 1fr; }
+    .book-card { grid-template-columns: 1fr; text-align: center; }
+    .classics-grid { grid-template-columns: 1fr; }
   }
 </style>
