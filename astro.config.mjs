@@ -2,6 +2,8 @@
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
+// NOTE: Remove `base` once custom domain is configured
 export default defineConfig({
-  site: 'https://www.lampandlightpublishing.com',
+  site: 'https://joeldhamilton.github.io',
+  base: '/lampandlightpublishing',
 });

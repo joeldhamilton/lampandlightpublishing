@@ -1,5 +1,5 @@
 ---
-
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Lamp & Light Publishing — books that sharpen, convict, and equip. Classic adaptations, devotionals, and biblical study by Joel Hamilton." />
-    <link rel="icon" type="image/png" href="/images/lamplight-icon.png" />
+    <link rel="icon" type="image/png" href={`${base}images/lamplight-icon.png`} />
     <title>Lamp & Light Publishing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,8 +23,8 @@
     <!-- Nav -->
     <nav class="nav">
       <div class="nav-inner">
-        <a href="/" class="nav-brand">
-          <img src="/images/lamplight-icon.png" alt="" class="nav-icon" />
+        <a href={base} class="nav-brand">
+          <img src={`${base}images/lamplight-icon.png`} alt="" class="nav-icon" />
           Lamp & Light
         </a>
         <div class="nav-right">
@@ -60,7 +60,7 @@
         <div class="books-grid">
           <a href="https://amzn.to/42egs57" target="_blank" rel="noopener" class="book-card">
             <div class="book-cover">
-              <img src="/images/cover-daily-crusader.jpg" alt="The Daily Crusader" />
+              <img src={`${base}images/cover-daily-crusader.jpg`} alt="The Daily Crusader" />
             </div>
             <div class="book-info">
               <h3>The Daily Crusader</h3>
@@ -72,7 +72,7 @@
 
           <a href="https://amzn.to/4mwc8rf" target="_blank" rel="noopener" class="book-card">
             <div class="book-cover">
-              <img src="/images/cover-not-by-effort.jpg" alt="Not by Effort" />
+              <img src={`${base}images/cover-not-by-effort.jpg`} alt="Not by Effort" />
             </div>
             <div class="book-info">
               <h3>Not by Effort</h3>
@@ -84,7 +84,7 @@
 
           <a href="https://amzn.to/4cJAPND" target="_blank" rel="noopener" class="book-card">
             <div class="book-cover">
-              <img src="/images/cover-the-line.jpg" alt="The Line" />
+              <img src={`${base}images/cover-the-line.jpg`} alt="The Line" />
             </div>
             <div class="book-info">
               <h3>The Line</h3>
@@ -112,19 +112,19 @@
 
         <div class="classics-grid">
           <a href="https://amzn.to/484fX14" target="_blank" rel="noopener" class="classic-card">
-            <img src="/images/cover-ti-early-reader.png" alt="Treasure Island Early Reader" />
+            <img src={`${base}images/cover-ti-early-reader.png`} alt="Treasure Island Early Reader" />
             <h4>Early Reader</h4>
             <p>Ages 6-8</p>
           </a>
 
           <a href="https://amzn.to/4tirXEI" target="_blank" rel="noopener" class="classic-card">
-            <img src="/images/cover-ti-modern-classic.png" alt="Treasure Island Modern Classic" />
+            <img src={`${base}images/cover-ti-modern-classic.png`} alt="Treasure Island Modern Classic" />
             <h4>Modern Classic</h4>
             <p>Adapted for modern English</p>
           </a>
 
           <a href="https://amzn.to/4cszCcw" target="_blank" rel="noopener" class="classic-card">
-            <img src="/images/cover-ti-scholars.jpg" alt="Treasure Island Scholar's Edition" />
+            <img src={`${base}images/cover-ti-scholars.jpg`} alt="Treasure Island Scholar's Edition" />
             <h4>Scholar's Edition</h4>
             <p>Annotated original text</p>
           </a>
@@ -134,19 +134,19 @@
 
         <div class="workbooks-grid">
           <a href="https://amzn.to/4tJ0pIj" target="_blank" rel="noopener" class="workbook-card">
-            <img src="/images/cover-ti-wb-elementary.jpg" alt="Elementary Workbook" />
+            <img src={`${base}images/cover-ti-wb-elementary.jpg`} alt="Elementary Workbook" />
             <h4>Elementary</h4>
             <p>Grades 1-4</p>
           </a>
 
           <a href="https://amzn.to/4myxggK" target="_blank" rel="noopener" class="workbook-card">
-            <img src="/images/cover-ti-wb-middle.jpg" alt="Middle Grade Workbook" />
+            <img src={`${base}images/cover-ti-wb-middle.jpg`} alt="Middle Grade Workbook" />
             <h4>Middle Grade</h4>
             <p>Grades 5-8</p>
           </a>
 
           <a href="https://amzn.to/3QcM9sX" target="_blank" rel="noopener" class="workbook-card">
-            <img src="/images/cover-ti-wb-high.jpg" alt="High School Workbook" />
+            <img src={`${base}images/cover-ti-wb-high.jpg`} alt="High School Workbook" />
             <h4>High School</h4>
             <p>Grades 9-12</p>
           </a>
